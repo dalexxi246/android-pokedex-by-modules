@@ -1,0 +1,13 @@
+apply plugin: 'java'
+apply plugin: "net.ltgt.apt"
+apply plugin: "idea"
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    testCompile 'junit:junit:4.12'
+
+    compile "org.greenrobot:eventbus:$rootProject.ext.eventbusVersion"
+    compile "de.greenrobot:java-common:$rootProject.ext.essentialsVersion"
+    compile "com.google.dagger:dagger:$rootProject.ext.dagger2Version"
+    apt "com.google.dagger:dagger-compiler:$rootProject.ext.dagger2Version"
+}
