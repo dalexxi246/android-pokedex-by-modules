@@ -26,7 +26,7 @@ public class Main {
 
             @Override
             public void signUp(String email, String password) {
-                System.out.println("WARNING!!! ... Not yet implemented");
+                throw new UnsupportedOperationException("WARNING!!! ... Not yet implemented");
                 /*
                 if (email.equals("walex6hh@gmail.com")){
                     System.out.println("PASO 1 CORRECTO... validando Password");
@@ -56,7 +56,12 @@ public class Main {
             }
 
             @Override
-            public void connectWithProvider(int providerCode) {
+            public void connectWithFacebook() {
+
+            }
+
+            @Override
+            public void connectWithGoogle() {
 
             }
 

@@ -15,7 +15,9 @@ public interface UsersRepository {
 
     void signIn(String email, String password);
 
-    void connectWithProvider(int providerCode);
+    void connectWithFacebook();
+
+    void connectWithGoogle();
 
     void post(UserEvent event);
 }
