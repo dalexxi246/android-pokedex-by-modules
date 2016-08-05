@@ -20,14 +20,25 @@ android {
     }
     productFlavors {
     }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+    dexOptions {
+        incremental true
+    }
 }
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
-    compile project(':common')
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:24.1.1'
     compile "com.github.bumptech.glide:glide:$rootProject.ext.glideVersion"
     compile "com.google.dagger:dagger:$rootProject.ext.dagger2Version"
     apt "com.google.dagger:dagger-compiler:$rootProject.ext.dagger2Version"
+    compile "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofitVersion"
+    compile "com.squareup.retrofit2:converter-gson:$rootProject.ext.retrofitVersion"
+    compile "org.greenrobot:eventbus:$rootProject.ext.eventbusVersion"
+
+
 }

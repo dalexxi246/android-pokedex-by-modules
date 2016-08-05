@@ -4,9 +4,9 @@ apply plugin: "idea"
 
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
+
     compile project(':common')
     compile project(':model')
-
     testCompile 'junit:junit:4.12'
     compile "com.google.dagger:dagger:$rootProject.ext.dagger2Version"
     apt "com.google.dagger:dagger-compiler:$rootProject.ext.dagger2Version"
