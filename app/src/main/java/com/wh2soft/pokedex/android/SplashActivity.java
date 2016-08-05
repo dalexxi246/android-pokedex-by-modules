@@ -5,7 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 
 import com.wh2soft.modules.android.R;
 
-public class MainActivity extends AppCompatActivity {
+public class SplashActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

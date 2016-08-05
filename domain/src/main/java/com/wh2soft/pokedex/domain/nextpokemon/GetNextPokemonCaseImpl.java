@@ -19,7 +19,11 @@ public class GetNextPokemonCaseImpl implements GetNextPokemonCase {
 
     @Override
     public void execute() {
-        String pokemonID = "" + new Random().nextInt(POKEMON_MAX_NUMBER);
+        int randomID;
+        do {
+            randomID = new Random().nextInt(POKEMON_MAX_NUMBER);
+        } while (randomID > 0);
+        String pokemonID = "" + randomID;
         repository.getNextPokemon(pokemonID);
     }
 }
