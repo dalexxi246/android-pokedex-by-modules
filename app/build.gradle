@@ -6,7 +6,7 @@ android {
     compileSdkVersion 24
     buildToolsVersion "24.0.1"
     defaultConfig {
-        applicationId 'com.wh2soft.pokedex.android'
+        applicationId 'com.wh2soft.pokedex'
         minSdkVersion 14
         targetSdkVersion 24
         versionCode 1
@@ -31,14 +31,24 @@ android {
 
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
+
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:24.1.1'
+
+    compile "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
+    compile "com.android.support:recyclerview-v7:$rootProject.ext.supportLibraryVersion"
+
     compile "com.github.bumptech.glide:glide:$rootProject.ext.glideVersion"
+
     compile "com.google.dagger:dagger:$rootProject.ext.dagger2Version"
     apt "com.google.dagger:dagger-compiler:$rootProject.ext.dagger2Version"
+
     compile "com.squareup.retrofit2:retrofit:$rootProject.ext.retrofitVersion"
     compile "com.squareup.retrofit2:converter-gson:$rootProject.ext.retrofitVersion"
+    compile "com.squareup.retrofit2:adapter-rxjava:$rootProject.ext.retrofitVersion"
+
     compile "org.greenrobot:eventbus:$rootProject.ext.eventbusVersion"
 
-
+    compile "io.reactivex:rxandroid:$rootProject.ext.rxJavaVersion"
+    compile "io.reactivex:rxjava:$rootProject.ext.rxAndroidVersion"
+    compile 'com.android.support:design:24.2.0'
 }
