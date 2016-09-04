@@ -4,6 +4,6 @@
     <color name="colorPrimaryDark">#D32F2F</color>
     <color name="colorAccent">#03a9f4</color>
     <color name="windowBackground_darkTheme">#303030</color>
-    <color name="textColorPrimary">#FFFFFF</color>
+    <color name="textColorPrimary">#ffffff</color>
     <color name="windowBackground_darkTheme_20">#424242</color>
 </resources>

@@ -36,6 +36,7 @@ dependencies {
 
     compile "com.android.support:appcompat-v7:$rootProject.ext.supportLibraryVersion"
     compile "com.android.support:recyclerview-v7:$rootProject.ext.supportLibraryVersion"
+    compile 'com.android.support:design:24.2.0'
 
     compile "com.github.bumptech.glide:glide:$rootProject.ext.glideVersion"
 
@@ -50,5 +51,6 @@ dependencies {
 
     compile "io.reactivex:rxandroid:$rootProject.ext.rxJavaVersion"
     compile "io.reactivex:rxjava:$rootProject.ext.rxAndroidVersion"
-    compile 'com.android.support:design:24.2.0'
+
+    compile "com.jakewharton:butterknife:$rootProject.ext.butterknifeVersion"
 }
