@@ -21,14 +21,12 @@ public class GamePresenterForImageModeImpl implements GamePresenter {
     GetNextPokemonCase useCase;
     EventBus eventBus;
 
-    private ArrayList<Pokemon> collectionForUpdateUI;
     private List<Integer> pokemonIDs;
 
     public GamePresenterForImageModeImpl(GameModeView view, GetNextPokemonCase useCase, EventBus eventBus) {
         this.view = view;
         this.useCase = useCase;
         this.eventBus = eventBus;
-        collectionForUpdateUI = new ArrayList<>(GamePresenter.MAX_POKEMON_ON_GAMEPLAY);
     }
 
     @Override
@@ -66,13 +64,22 @@ public class GamePresenterForImageModeImpl implements GamePresenter {
 
     @Override
     public void updatePokemonOnUI(Pokemon pData, int idComponent) {
-        switch (idComponent) {
-            case 0:
-                view.onSetImageURL(pData);
-                break;
-            default:
-                view.onSetPokemonChoice(pData, idComponent);
-                break;
+        if (view != null) {
+            switch (idComponent) {
+                case 0:
+                    view.onSetImageURL(pData);
+                    break;
+                default:
+                    view.onSetPokemonChoice(pData, idComponent);
+                    break;
+            }
+        }
+    }
+
+    @Override
+    public void showErrorMessage(String errorMsg) {
+        if (view != null) {
+            view.showError(errorMsg);
         }
     }
 
@@ -90,7 +97,8 @@ public class GamePresenterForImageModeImpl implements GamePresenter {
                 }
                 break;
             case PokemonEvent.POKEMON_GET_FAILED:
-                // TODO Mensaje de error
+                showErrorMessage(ev.getError());
+                break;
         }
     }
 }

@@ -22,5 +22,7 @@ public interface GamePresenter {
 
     void updatePokemonOnUI(Pokemon pData, int idComponent);
 
+    void showErrorMessage(String errorMsg);
+
     void onEventMainThread(PokemonEvent ev);
 }

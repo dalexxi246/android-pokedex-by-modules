@@ -34,10 +34,12 @@ public class GamePlayImageModeActivity extends AppCompatActivity implements Game
     Button fab;
     @BindView(R.id.text_time_remaining)
     TextView textTimeRemaining;
+    @BindView(R.id.text_countdown)
+    TextView textCountdown;
 
     // GamePresenter presenter;
 
-    // Android LifeCycle Methods ------------------------------------------------------------
+    // Android LifeCycle Methods -------------------------------------------------------------------
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +70,7 @@ public class GamePlayImageModeActivity extends AppCompatActivity implements Game
         super.onDestroy();
     }
 
-    // Android Interaction Listeners Methods ------------------------------------------------------------
+    // Android Interaction Listeners Methods -------------------------------------------------------
 
     @OnClick({R.id.pokemon_choice_3, R.id.pokemon_choice_2, R.id.pokemon_choice_1, R.id.fab})
     public void onClick(View view) {
@@ -84,7 +86,7 @@ public class GamePlayImageModeActivity extends AppCompatActivity implements Game
         }
     }
 
-    // View Methods
+    // View Methods --------------------------------------------------------------------------------
 
     @Override
     public void addChoiceButtons() {
@@ -97,12 +99,27 @@ public class GamePlayImageModeActivity extends AppCompatActivity implements Game
     }
 
     @Override
+    public void updateCountdown() {
+
+    }
+
+    @Override
     public void showLoading() {
 
     }
 
     @Override
     public void hideLoading() {
+
+    }
+
+    @Override
+    public void showError(String errorMsg) {
+
+    }
+
+    @Override
+    public void hideError() {
 
     }
 

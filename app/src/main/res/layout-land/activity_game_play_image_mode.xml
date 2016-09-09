@@ -1,82 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context="com.wh2soft.pokedex.ui.gameplay.GamePlayImageModeActivity">
 
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar_main"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="@dimen/app_bar_height"
-        android:background="@color/colorPrimary"
-        app:navigationIcon="@drawable/ic_menu_white_36dp"
-        app:title="¿Quien es ese Pokemon?" />
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="221dp">
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar_main"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/app_bar_height"
+            android:background="@color/colorPrimary"
+            app:navigationIcon="@drawable/ic_menu_white_36dp"
+            app:title="¿Quien es ese Pokemon?" />
 
-        <ImageView
-            android:id="@+id/picture"
-            style="@style/Element.MarginHorizontal"
-            android:layout_width="270dp"
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="221dp">
+
+            <ImageView
+                android:id="@+id/picture"
+                style="@style/Element.MarginHorizontal"
+                android:layout_width="270dp"
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/activity_vertical_margin"
+                android:height="0dp"
+                android:background="@color/windowBackground_darkTheme_20"
+                android:contentDescription="Main Pokemon" />
+
+            <Button
+                android:id="@+id/pokemon_choice_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/picture"
+                android:layout_alignLeft="@id/text_current_matched_items"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignStart="@id/text_current_matched_items"
+                android:background="@android:color/transparent"
+                android:textColor="@color/colorAccent"
+                tools:text="Pokemon_3" />
+
+            <Button
+                android:id="@+id/pokemon_choice_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/pokemon_choice_3"
+                android:layout_alignLeft="@id/text_current_matched_items"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignStart="@id/text_current_matched_items"
+                android:background="@android:color/transparent"
+                android:textColor="@color/colorAccent"
+                tools:text="Pokemon_2" />
+
+            <Button
+                android:id="@+id/pokemon_choice_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/pokemon_choice_2"
+                android:layout_alignLeft="@id/text_current_matched_items"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignStart="@id/text_current_matched_items"
+                android:background="@android:color/transparent"
+                android:textColor="@color/colorAccent"
+                tools:text="Pokemon_1" />
+
+            <TextView
+                android:id="@+id/text_current_matched_items"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/picture"
+                android:layout_toEndOf="@+id/picture"
+                android:layout_toRightOf="@+id/picture"
+                android:gravity="center"
+                android:paddingBottom="16dp"
+                android:paddingTop="16dp"
+                android:textAlignment="gravity"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                tools:text="Has acertado 5 de 10. Sigue asi" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_margin="@dimen/activity_vertical_margin"
-            android:height="0dp"
-            android:background="@color/windowBackground_darkTheme_20"
-            android:contentDescription="Main Pokemon" />
+            android:background="@color/windowBackground_darkTheme_20">
 
-        <Button
-            android:id="@+id/pokemon_choice_3"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignBottom="@id/picture"
-            android:layout_alignLeft="@id/text_current_matched_items"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignStart="@id/text_current_matched_items"
-            android:background="@android:color/transparent"
-            android:textColor="@color/colorAccent"
-            tools:text="Pokemon_3" />
+            <Button
+                android:id="@+id/fab"
+                android:layout_width="160dip"
+                android:layout_height="match_parent"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:background="@color/colorAccent"
+                android:textColor="@color/textColorPrimary"
+                tools:text="Cambiar" />
 
-        <Button
-            android:id="@+id/pokemon_choice_2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/pokemon_choice_3"
-            android:layout_alignLeft="@id/text_current_matched_items"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignStart="@id/text_current_matched_items"
-            android:background="@android:color/transparent"
-            android:textColor="@color/colorAccent"
-            tools:text="Pokemon_2" />
+            <TextView
+                android:id="@+id/text_time_remaining"
+                android:layout_width="267dip"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="18dp"
+                android:layout_marginStart="18dp"
+                android:gravity="center"
+                android:paddingBottom="16dp"
+                android:paddingTop="16dp"
+                android:textAlignment="gravity"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                tools:text="El reto termina en 3:50" />
 
-        <Button
-            android:id="@+id/pokemon_choice_1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_above="@+id/pokemon_choice_2"
-            android:layout_alignLeft="@id/text_current_matched_items"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignStart="@id/text_current_matched_items"
-            android:background="@android:color/transparent"
-            android:textColor="@color/colorAccent"
-            tools:text="Pokemon_1" />
+        </RelativeLayout>
 
-        <TextView
+        <!--TextView
             android:id="@+id/text_current_matched_items"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_alignTop="@+id/picture"
-            android:layout_toEndOf="@+id/picture"
-            android:layout_toRightOf="@+id/picture"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10"
             android:gravity="center"
             android:paddingBottom="16dp"
             android:paddingTop="16dp"
@@ -86,87 +139,43 @@
             tools:text="Has acertado 5 de 10. Sigue asi" />
 
 
-    </RelativeLayout>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@color/windowBackground_darkTheme_20">
+        <RelativeLayout
+            style="@style/Element.MarginHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="16.57"
+            android:height="0dp">
 
-        <Button
-            android:id="@+id/fab"
-            android:layout_width="160dip"
-            android:layout_height="match_parent"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:background="@color/colorAccent"
-            android:textColor="@color/textColorPrimary"
-            tools:text="Cambiar" />
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:clickable="true"
+                app:fabSize="normal"
+                app:srcCompat="@color/colorAccent" />
 
-        <TextView
-            android:id="@+id/text_time_remaining"
-            android:layout_width="267dip"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginLeft="18dp"
-            android:layout_marginStart="18dp"
-            android:gravity="center"
-            android:paddingBottom="16dp"
-            android:paddingTop="16dp"
-            android:textAlignment="gravity"
-            android:textColor="@android:color/white"
-            android:textSize="16sp"
-            tools:text="El reto termina en 3:50" />
+            <TextView
+                android:id="@+id/text_time_remaining"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:textAlignment="gravity"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                tools:text="El reto termina en 3.50" />
 
-    </RelativeLayout>
+        </RelativeLayout>
 
-    <!--TextView
-        android:id="@+id/text_current_matched_items"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="10"
-        android:gravity="center"
-        android:paddingBottom="16dp"
-        android:paddingTop="16dp"
-        android:textAlignment="gravity"
-        android:textColor="@android:color/white"
-        android:textSize="16sp"
-        tools:text="Has acertado 5 de 10. Sigue asi" />
+        -->
+    </LinearLayout>
 
-
-
-    <RelativeLayout
-        style="@style/Element.MarginHorizontal"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="16.57"
-        android:height="0dp">
-
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:clickable="true"
-            app:fabSize="normal"
-            app:srcCompat="@color/colorAccent" />
-
-        <TextView
-            android:id="@+id/text_time_remaining"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
-            android:textAlignment="gravity"
-            android:textColor="@android:color/white"
-            android:textSize="16sp"
-            tools:text="El reto termina en 3.50" />
-
-    </RelativeLayout>
-
-    -->
-</LinearLayout>
+    <include
+        layout="@layout/view_gameplay_countdown"
+        android:visibility="gone" />
+</FrameLayout>

@@ -1,108 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context="com.wh2soft.pokedex.ui.gameplay.GamePlayImageModeActivity">
-
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/toolbar_main"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/app_bar_height"
-        android:background="@color/colorPrimary"
-        app:navigationIcon="@drawable/ic_menu_white_36dp"
-        app:title="@string/gameplay.text.appBarTitle" />
-
-    <TextView
-        android:id="@+id/text_current_matched_items"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="10"
-        android:gravity="center"
-        android:paddingBottom="16dp"
-        android:paddingTop="16dp"
-        android:text="@string/gameplay.text.currentMatchedItems"
-        android:textAlignment="gravity"
-        android:textColor="@android:color/white"
-        android:textSize="16sp"
-        tools:text="Has acertado 5 de 10. Sigue asi" />
-
-    <ImageView
-        android:id="@+id/picture"
-        style="@style/Element.MarginHorizontal"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="65.17"
-        android:height="0dp"
-        android:background="@color/windowBackground_darkTheme_20"
-        android:contentDescription="Main Pokemon" />
-
-    <RelativeLayout
-        style="@style/Element.MarginHorizontal"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="16.57"
-        android:height="0dp">
-
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/fab"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:clickable="true"
-            app:fabSize="normal"
-            app:srcCompat="@color/colorAccent" />
-
-        <TextView
-            android:id="@+id/text_time_remaining"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
-            android:text="@string/gameplay.text.timeRemaining"
-            android:textAlignment="gravity"
-            android:textColor="@android:color/white"
-            android:textSize="16sp"
-            tools:text="El reto termina en 3.50" />
-
-    </RelativeLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="63dp"
-        android:background="@color/windowBackground_darkTheme_20"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <Button
-            android:id="@+id/pokemon_choice_1"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="20"
-            android:background="@android:color/transparent"
-            android:textColor="@color/colorAccent"
-            tools:text="Pokemon_1" />
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar_main"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/app_bar_height"
+            android:background="@color/colorPrimary"
+            app:navigationIcon="@drawable/ic_menu_white_36dp"
+            app:title="@string/gameplay.text.appBarTitle" />
 
-        <Button
-            android:id="@+id/pokemon_choice_2"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="20"
-            android:background="@android:color/transparent"
-            android:textColor="@color/colorAccent"
-            tools:text="Pokemon_1" />
+        <TextView
+            android:id="@+id/text_current_matched_items"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="10"
+            android:gravity="center"
+            android:paddingBottom="16dp"
+            android:paddingTop="16dp"
+            android:text="@string/gameplay.text.currentMatchedItems"
+            android:textAlignment="gravity"
+            android:textColor="@android:color/white"
+            android:textSize="16sp"
+            tools:text="Has acertado 5 de 10. Sigue asi" />
 
-        <Button
-            android:id="@+id/pokemon_choice_3"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="20"
-            android:background="@android:color/transparent"
-            android:textColor="@color/colorAccent"
-            tools:text="Pokemon_1" />
+        <ImageView
+            android:id="@+id/picture"
+            style="@style/Element.MarginHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="65.17"
+            android:height="0dp"
+            android:background="@color/windowBackground_darkTheme_20"
+            android:contentDescription="Main Pokemon" />
+
+        <RelativeLayout
+            style="@style/Element.MarginHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="16.57"
+            android:height="0dp">
+
+            <android.support.design.widget.FloatingActionButton
+                android:id="@+id/fab"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:clickable="true"
+                app:fabSize="normal"
+                app:srcCompat="@color/colorAccent" />
+
+            <TextView
+                android:id="@+id/text_time_remaining"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:text="@string/gameplay.text.timeRemaining"
+                android:textAlignment="gravity"
+                android:textColor="@android:color/white"
+                android:textSize="16sp"
+                tools:text="El reto termina en 3.50" />
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="63dp"
+            android:background="@color/windowBackground_darkTheme_20"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/pokemon_choice_1"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="20"
+                android:background="@android:color/transparent"
+                android:textColor="@color/colorAccent"
+                tools:text="Pokemon_1" />
+
+            <Button
+                android:id="@+id/pokemon_choice_2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="20"
+                android:background="@android:color/transparent"
+                android:textColor="@color/colorAccent"
+                tools:text="Pokemon_1" />
+
+            <Button
+                android:id="@+id/pokemon_choice_3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="20"
+                android:background="@android:color/transparent"
+                android:textColor="@color/colorAccent"
+                tools:text="Pokemon_1" />
+        </LinearLayout>
     </LinearLayout>
-</LinearLayout>
+
+    <include
+        layout="@layout/view_gameplay_countdown"
+        android:visibility="gone" />
+</FrameLayout>
