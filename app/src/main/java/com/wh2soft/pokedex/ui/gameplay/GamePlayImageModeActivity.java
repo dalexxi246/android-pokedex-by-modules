@@ -1,6 +1,8 @@
 package com.wh2soft.pokedex.ui.gameplay;
 
+import android.os.AsyncTask;
 import android.os.Bundle;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -31,12 +33,13 @@ public class GamePlayImageModeActivity extends AppCompatActivity implements Game
     @BindView(R.id.text_current_matched_items)
     TextView textCurrentMatchedItems;
     @BindView(R.id.fab)
-    Button fab;
+    FloatingActionButton fab;
     @BindView(R.id.text_time_remaining)
     TextView textTimeRemaining;
     @BindView(R.id.text_countdown)
     TextView textCountdown;
 
+    // GamePresenter presenter;
     // GamePresenter presenter;
 
     // Android LifeCycle Methods -------------------------------------------------------------------
@@ -48,11 +51,17 @@ public class GamePlayImageModeActivity extends AppCompatActivity implements Game
         ButterKnife.bind(this);
 
         setSupportActionBar(toolbarMain);
+
+        // presenter.onCreate();
+
     }
 
     @Override
     protected void onStart() {
         super.onStart();
+        if (textCountdown != null) {
+            beforeStartGame();
+        }
     }
 
     @Override
@@ -93,9 +102,41 @@ public class GamePlayImageModeActivity extends AppCompatActivity implements Game
 
     }
 
+    /**
+     * Conteo regresivo al iniciar la partida.
+     */
     @Override
     public void beforeStartGame() {
+        textCountdown.setText("3");
 
+        AsyncTask updateCountdownTask = new AsyncTask<Object, Integer, Boolean>() {
+            @Override
+            protected Boolean doInBackground(Object... objects) {
+                for (int i = 3; i > 0; i--) {
+                    publishProgress(i);
+                    try {
+                        Thread.sleep(1000);
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+                }
+                return true;
+            }
+
+            @Override
+            protected void onProgressUpdate(Integer... values) {
+                textCountdown.setText("" + values[0]);
+                super.onProgressUpdate(values);
+
+            }
+
+            @Override
+            protected void onPostExecute(Boolean aBoolean) {
+                super.onPostExecute(aBoolean);
+                textCountdown.setVisibility(View.GONE);
+            }
+        };
+        updateCountdownTask.execute();
     }
 
     @Override

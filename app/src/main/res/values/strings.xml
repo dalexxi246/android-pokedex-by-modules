@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Modules Android</string>
+    <string name="app_name">Pokedex Game</string>
     <string name="gameplay.text.appBarTitle">¿Quien es ese Pokemon?</string>
     <string name="gameplay.text.currentMatchedItems" formatted="false">Has acertado %s de %s veces. %s</string>
     <string name="gameplay.text.timeRemaining" formatted="false">El reto termina en %s</string>

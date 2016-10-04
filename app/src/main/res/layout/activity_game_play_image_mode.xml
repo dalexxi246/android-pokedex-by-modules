@@ -111,7 +111,5 @@
         </LinearLayout>
     </LinearLayout>
 
-    <include
-        layout="@layout/view_gameplay_countdown"
-        android:visibility="gone" />
+    <include layout="@layout/view_gameplay_countdown" />
 </FrameLayout>
