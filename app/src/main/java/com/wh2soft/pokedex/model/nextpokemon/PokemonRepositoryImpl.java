@@ -2,7 +2,9 @@ package com.wh2soft.pokedex.model.nextpokemon;
 
 import com.wh2soft.pokedex.common.event.PokemonEvent;
 import com.wh2soft.pokedex.lib.base.EventBus;
+import com.wh2soft.pokedex.model.api.PokeApiClient;
 import com.wh2soft.pokedex.model.api.PokeApiService;
+import com.wh2soft.pokedex.model.entities.Ability;
 import com.wh2soft.pokedex.model.entities.Pokemon;
 
 import retrofit2.Call;
@@ -22,6 +24,11 @@ public class PokemonRepositoryImpl implements PokemonRepository {
         this.eventBus = eventBus;
     }
 
+    public PokemonRepositoryImpl() {
+        PokeApiClient client = new PokeApiClient();
+        this.service = client.getPokeApiService();
+    }
+
     @Deprecated
     @Override
     public void getNextPokemon(String pokemonID) {
@@ -31,15 +38,21 @@ public class PokemonRepositoryImpl implements PokemonRepository {
             public void onResponse(Call<Pokemon> call, Response<Pokemon> response) {
                 Pokemon p = response.body();
                 if (p != null) {
-                    post(p);
+//                  post(p);
+                    System.out.println(p);
+                    for (Ability a : p.getAbilities()) {
+                        System.out.println(a);
+                    }
                 } else {
-                    post();
+//                  post();
+                    System.out.println("Nada");
                 }
             }
 
             @Override
             public void onFailure(Call<Pokemon> call, Throwable t) {
-                post(t.getLocalizedMessage());
+//                post(t.getLocalizedMessage());
+                System.out.println(t.getLocalizedMessage());
             }
         });
     }

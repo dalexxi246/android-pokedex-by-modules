@@ -2,6 +2,8 @@ package com.wh2soft.pokedex.model.entities;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
+
 /**
  * Created by wilmer on 1/08/16.
  */
@@ -15,6 +17,9 @@ public class Pokemon {
 
     @SerializedName("name")
     private String name;
+
+    @SerializedName("abilities")
+    private ArrayList<Ability> abilities;
 
     public int getId() {
         return id;
@@ -32,6 +37,14 @@ public class Pokemon {
         this.name = name;
     }
 
+    public ArrayList<Ability> getAbilities() {
+        return abilities;
+    }
+
+    public void setAbilities(ArrayList<Ability> abilities) {
+        this.abilities = abilities;
+    }
+
     public String getImageURL() {
         return POKEMON_IMAGE_URL_BASE + id + POKEMON_IMAGE_URL_FILE_EXT;
     }
@@ -40,7 +53,8 @@ public class Pokemon {
     public String toString() {
         return "Pokemon{" +
                 "id=" + id +
-                ", name=" + name +
+                ", name='" + name + '\'' +
+                ", abilities=" + abilities +
                 '}';
     }
 }
